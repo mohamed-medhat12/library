@@ -57,6 +57,7 @@ public class UpdateUserPageController implements Initializable {
 
     String cod;
 
+
     @FXML
     void deleteUser(ActionEvent event) {
         User u1 = new User();
@@ -129,7 +130,7 @@ public class UpdateUserPageController implements Initializable {
         LocalDate To = dateToUpdate.getValue();
         LocalDate from = dateFromUpdate.getValue();
         String mobileNum = mobileUpdate.getText();
-        String mobileUser = userInputCode.getText();
+        String codeBook = userInputCode.getText();
         if(To != null && from != null && typeUserUpdate.getSelectionModel().getSelectedItem() != null && name != null && em != null  && mobileNum != null ){
             String start = To.toString();
             String end = from.toString();
@@ -145,31 +146,35 @@ public class UpdateUserPageController implements Initializable {
                             b1.update("available",check,"availability");
                         }
                         // update to user table
-                        s1.update(name,mobileUser,"name");
-                        s1.update(em,mobileUser,"email");
-                        s1.update(mobileNum,mobileUser,"mobile");
-                        s1.update(start,mobileUser,"dateTo");
-                        s1.update(end,mobileUser,"dateFrom");
-                        s1.update(jop,mobileUser,"job");
-                        s1.update(code,mobileUser,"code");
-                        // update to History table
-                        s1.updateHistory(name,mobileUser,"name");
-                        s1.updateHistory(mobileNum,mobileUser,"mobileNum");
-                        s1.updateHistory(code,mobileUser,"bookCode");
-                        s1.updateHistory(start,mobileUser,"dateTo");
-                        s1.updateHistory(end,mobileUser,"dateFrom");
+                        s1.update(name, codeBook,"name");
+                        s1.update(em, codeBook,"email");
+                        s1.update(mobileNum, codeBook,"mobile");
+                        s1.update(start, codeBook,"dateTo");
+                        s1.update(end, codeBook,"dateFrom");
+                        s1.update(jop, codeBook,"job");
+                        s1.update(code, codeBook,"code");
+
+                        if (code.equals(cod) == true) {
+                            // update to History table
+                            s1.updateHistory(name, codeBook, "name");
+                            s1.updateHistory(mobileNum, codeBook, "mobileNum");
+                            s1.updateHistory(code, codeBook, "bookCode");
+                            s1.updateHistory(start, codeBook, "dateTo");
+                            s1.updateHistory(end, codeBook, "dateFrom");
+                        }else {
+                            AddUserPageController add = new AddUserPageController();
+                            add.history(name,mobileNum,code,start,end);
+                        }
                         // update to Borrow table
-                        b1.updateBorrow(code,mobileUser,"bookCode");
-                        b1.updateBorrow(mobileNum,mobileUser,"mobileNum");
-                        b1.updateBorrow(name,mobileUser,"name");
-                        b1.updateBorrow(start,mobileUser,"dateFrom");
-                        b1.updateBorrow(end,mobileUser,"dateTo");
+                        b1.updateBorrow(code, codeBook,"bookCode");
+                        b1.updateBorrow(mobileNum, codeBook,"mobileNum");
+                        b1.updateBorrow(name, codeBook,"name");
+                        b1.updateBorrow(start, codeBook,"dateFrom");
+                        b1.updateBorrow(end, codeBook,"dateTo");
                         updateMassage.setTextFill(Color.GREEN);
                         updateMassage.setText(s1.massage);
                         codeNotFound.setText("");
-
                         remove();
-
                     }else {
                         updateMassage.setTextFill(Color.RED);
                         updateMassage.setText("Please enter valid date!!!");

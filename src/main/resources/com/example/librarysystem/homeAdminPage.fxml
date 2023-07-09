@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane fx:id="pb" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1220.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarysystem.HomeAdminPageController">
    <left>
       <VBox prefHeight="740.0" prefWidth="340.0" style="-fx-background-color: #1b1c1e;" BorderPane.alignment="CENTER">
@@ -92,7 +91,7 @@
                               <Font name="System Bold" size="25.0" />
                            </font>
                            <padding>
-                              <Insets left="-10.0" />
+                              <Insets left="-45.0" />
                            </padding>
                         </Button>
                      </children>
@@ -245,4 +244,11 @@
          </children>
       </VBox>
    </left>
+   <center>
+      <ImageView fitHeight="605.0" fitWidth="821.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../assets/library.gif" />
+         </image>
+      </ImageView>
+   </center>
 </BorderPane>

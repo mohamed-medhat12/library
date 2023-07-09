@@ -53,6 +53,9 @@ public class addBookPageController implements Initializable {
 
     private String src;
     String imageabsulute;
+
+    Validation check = new Validation();
+    Book b1 = new Book();
     @FXML
     void addBook(ActionEvent event) throws MalformedURLException {
         String title = bookName.getText();
@@ -60,17 +63,23 @@ public class addBookPageController implements Initializable {
         String auth = author.getText();
         String image = src;
         String imageSrc = imageabsulute;
-        if(typeBook.getSelectionModel().getSelectedItem() != null && title != null  && code != null && author != null){
-            String type = typeBook.getSelectionModel().getSelectedItem().toString();
-            Book b1 = new Book(title,code,auth,type,image,imageSrc);
-            b1.add();
-            errorMassageButton.setText(b1.massage);
-            errorMassageButton.setTextFill(Color.GREEN);
-            remove();
 
+        if(check.isNumber(code) == true && code.length() == 9 && b1.CheckBookCode(code) == false) {
+            if (typeBook.getSelectionModel().getSelectedItem() != null && title != null && code != null && author != null) {
+                String type = typeBook.getSelectionModel().getSelectedItem().toString();
+                Book b1 = new Book(title, code, auth, type, image, imageSrc);
+                b1.add();
+                errorMassageButton.setText(b1.massage);
+                errorMassageButton.setTextFill(Color.GREEN);
+                remove();
+
+            } else {
+                errorMassageButton.setTextFill(Color.RED);
+                errorMassageButton.setText("Missing data!!!");
+            }
         }else {
             errorMassageButton.setTextFill(Color.RED);
-            errorMassageButton.setText("Missing data!!!");
+            errorMassageButton.setText("Invalid code!!");
         }
     }
 

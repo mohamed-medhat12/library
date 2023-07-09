@@ -1,5 +1,4 @@
 package com.example.librarysystem;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -18,6 +17,12 @@ public class AddLibrarianPagController {
     private TextField mobile;
 
     @FXML
+    private Label emailValidation;
+
+    @FXML
+    private Label nationalIdValidation;
+
+    @FXML
     private TextField nationalID;
 
     @FXML
@@ -26,6 +31,7 @@ public class AddLibrarianPagController {
     @FXML
     private TextField userName;
 
+    Validation check = new Validation();
     @FXML
     void addButton(ActionEvent event) {
         String name = userName.getText();
@@ -33,9 +39,14 @@ public class AddLibrarianPagController {
         String mobileNum = mobile.getText();
         String pass = password.getText();
         String national = nationalID.getText();
-        if(national.length() != 14) {
-            errorMassageButton.setText("please enter a correct national ID");
-        }else if(name != null && em != null  && mobileNum != null && pass != null){
+        if (check.validEmail(em) == false){
+            emailValidation.setText("please enter a correct email");
+        }else {
+            emailValidation.setText(null);
+        }
+        if(check.isNumber(national) == false || national.length() != 14) {
+            nationalIdValidation.setText("please enter a correct national ID");
+        }else if(name != null && check.validEmail(em) == true  && mobileNum != null && pass != null){
             Librarian l2 = new Librarian(name,em,mobileNum,national,pass);
             l2.add();
             errorMassageButton.setText(l2.massage);
@@ -54,6 +65,8 @@ public class AddLibrarianPagController {
         mobile.setText(null);
         password.setText(null);
         nationalID.setText(null);
+        nationalIdValidation.setText(null);
+        emailValidation.setText(null);
     }
 
 }

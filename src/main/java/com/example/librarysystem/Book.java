@@ -139,7 +139,7 @@ public class Book {
 
     public Image uploadImage() throws MalformedURLException {
         FileChooser fc = new FileChooser();
-        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image files","*.pnj","*.jpg"));
+        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image files","*.png","*.jpg"));
         File file = fc.showOpenDialog(stage);
         if(file == null){
             massage= "please upload an image!!!!";

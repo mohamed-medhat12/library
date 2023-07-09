@@ -23,8 +23,17 @@
          <children>
             <Pane prefHeight="59.0" prefWidth="61.0" />
          </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="59.0" prefWidth="880.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="880.0">
          <children>
             <Label prefHeight="40.0" prefWidth="231.0" text="Name" textFill="WHITE">
                <font>
@@ -40,8 +49,17 @@
                </font>
             </TextField>
          </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="880.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="880.0">
          <children>
             <Label prefHeight="35.0" prefWidth="235.0" text=" Email" textFill="WHITE">
                <font>
@@ -50,9 +68,26 @@
             </Label>
             <Pane prefHeight="59.0" prefWidth="0.0" />
             <TextField fx:id="email" prefHeight="25.0" prefWidth="299.0" style="-fx-background-color: rgba(0,0,0); -fx-border-color: gray; -fx-border-width: 0 0 3 0;" styleClass="text-input" stylesheets="@style.css" />
+            <Label fx:id="emailValidation" prefHeight="20.0" prefWidth="302.0" textFill="#f25151">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </Label>
          </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="53.0" prefWidth="880.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="880.0">
          <children>
             <Label prefHeight="35.0" prefWidth="235.0" text="National ID" textFill="WHITE">
                <font>
@@ -63,9 +98,26 @@
                </padding>
             </Label>
             <TextField fx:id="nationalID" prefHeight="25.0" prefWidth="299.0" style="-fx-background-color: rgba(0,0,0); -fx-border-color: gray; -fx-border-width: 0 0 3 0;" styleClass="text-input" stylesheets="@style.css" />
+            <Label fx:id="nationalIdValidation" prefHeight="20.0" prefWidth="302.0" textFill="#f25151">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </Label>
          </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="53.0" prefWidth="880.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="880.0">
          <children>
             <Label prefHeight="35.0" prefWidth="235.0" text="Mobile Number" textFill="WHITE">
                <font>
@@ -77,8 +129,17 @@
             </Label>
             <TextField fx:id="mobile" prefHeight="25.0" prefWidth="299.0" style="-fx-background-color: rgba(0,0,0); -fx-border-color: gray; -fx-border-width: 0 0 3 0;" styleClass="text-input" stylesheets="@style.css" />
          </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="53.0" prefWidth="880.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="880.0">
          <children>
             <Label prefHeight="35.0" prefWidth="235.0" text="Password" textFill="WHITE">
                <font>
@@ -90,6 +151,15 @@
             </Label>
             <TextField fx:id="password" prefHeight="25.0" prefWidth="299.0" style="-fx-background-color: rgba(0,0,0); -fx-border-color: gray; -fx-border-width: 0 0 3 0;" styleClass="text-input" stylesheets="@style.css" />
          </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </HBox>
       <HBox alignment="CENTER_RIGHT" prefHeight="189.0" prefWidth="880.0">
          <children>
@@ -114,8 +184,14 @@
             </Label>
          </children>
          <VBox.margin>
-            <Insets top="50.0" />
+            <Insets />
          </VBox.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </HBox>
    </children>
 </VBox>

@@ -82,8 +82,8 @@ public class User extends Person{
         return flag;
     }
 
-    public void updateHistory(String name, String mobile, String column){
-        String sql = "UPDATE history SET '"+column+"'= '"+name+"' WHERE bookCode = "+mobile+";";
+    public void updateHistory(String name, String code, String column){
+        String sql = "UPDATE history SET '"+column+"'= '"+name+"' WHERE bookCode = "+code+";";
         try {
 
             Connection conn =  connection.connect();
