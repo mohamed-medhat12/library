@@ -47,8 +47,9 @@ public class History implements Initializable {
 
 
 
-    private static ObservableList<controller> list = FXCollections.observableArrayList();
+
     public static ObservableList<controller> getData() {
+        ObservableList<controller> list = FXCollections.observableArrayList();
 
         Statement stmt = null;
         try {
@@ -83,7 +84,7 @@ public class History implements Initializable {
 
         table.setItems(getData());
 
-        FilteredList<controller> filteredData = new FilteredList<>(list, b -> true);
+        FilteredList<controller> filteredData = new FilteredList<>(getData(), b -> true);
         userInputCode.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(controller -> {
                 if (newValue == null || newValue.isEmpty()){
