@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarysystem.addBookPageController">
+<VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarysystem.addBookPageController">
    <children>
       <Label prefHeight="110.0" prefWidth="299.0" text="Add Book" textFill="WHITE">
          <font>
@@ -135,7 +135,7 @@
                   <Insets right="-10.0" />
                </HBox.margin>
             </Button>
-            <Label fx:id="errorMassageButton" alignment="CENTER" prefHeight="42.0" prefWidth="234.0" textFill="#f25151">
+            <Label fx:id="errorMassageButton" alignment="CENTER" prefHeight="42.0" prefWidth="264.0" textFill="#f25151">
                <font>
                   <Font size="14.0" />
                </font>

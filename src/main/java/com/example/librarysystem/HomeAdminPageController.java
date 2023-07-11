@@ -39,8 +39,8 @@ public class HomeAdminPageController implements Initializable {
     }
 
     @FXML
-    void historyPage(MouseEvent event) {
-
+    void historyPage(MouseEvent event) throws IOException {
+       loadPage("historyPage.fxml");
     }
 
     @FXML
